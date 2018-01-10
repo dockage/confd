@@ -18,7 +18,6 @@ depend() {
 start_pre() {
 	checkpath --directory --owner root:root ${pidfile%/*}
 	checkpath --directory --owner root:root ${confdir}
-	$command -version
 }
 
 checkconfig() {

@@ -41,3 +41,26 @@ Alternatively you can build the image yourself.
 ```bash
 docker build -t dockage/alpine-confd github.com/dockage/alpine-confd
 ```
+
+### Available Configuration Parameters
+
+*Please refer the docker run command options for the `--env-file` flag where you can specify all required environment variables in a single file. This will save you from writing a potentially long docker run command. Alternatively you can use docker-compose.*
+
+Below is the complete list of available options that can be used to customize your `confd` installation.
+
+
+| Parameter | Description |
+|-----------|-------------|
+| `CONFD_BACKEND` | The backend to use. Possible options: [`etcd`](https://github.com/coreos/etcd), [`consul`](http://consul.io), [`dynamodb`](http://aws.amazon.com/dynamodb), [`redis`](http://redis.io), [`vault`](https://vaultproject.io), [`zookeeper`](https://zookeeper.apache.org), [`ssm`](https://aws.amazon.com/ec2/systems-manager) or `env`. Defaults to `env`. |
+| `CONFD_CLIENT_CAKEYS` | The client CA key file. Defaults to `''`. |
+| `CONFD_CLIENT_CERT` | The client cert file. Defaults to `''`. |
+| `CONFD_CLIENT_KEY` | The client key file. Defaults to `''` |
+| `CONFD_INTERVAL` | The backend polling interval in seconds. Defaults to `600`. |
+| `CONFD_LOG_LEVEL` | Level which confd should log messages. Defaults to `info`. |
+| `CONFD_NODES` | List of backend nodes. E.g.: `"http://127.0.0.1:4001", "http://127.0.0.1:4002"`. Defaults to `''`. |
+| `CONFD_PREFIX` | The string to prefix to keys. Defaults to `/`. |
+| `CONFD_SCHEME` | The backend URI scheme. E.g.: `http` or `https`. Defaults to `http`. |
+| `CONFD_SRV_DOMAIN` | The name of the resource record. Defaults to `''`. |
+| `CONFD_SRV_RECORD` | The SRV record to search for backends nodes. Defaults to `''`. |
+| `CONFD_SYNC_ONLY` | sync without check_cmd and reload_cmd. Defaults to `false`. |
+| `CONFD_WATCH` | Enable watch support. Defaults to `false`. |

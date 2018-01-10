@@ -7,6 +7,7 @@ COPY assets/root/ /
 
 RUN wget -O /usr/sbin/confd https://github.com/kelseyhightower/confd/releases/download/v${CONFD_VERSION}/confd-${CONFD_VERSION}-linux-amd64 \
     && chmod +x /usr/sbin/confd \
-    && rc-update add confd
+    && rc-update add confd default \
+    && rc-update add local
 
 WORKDIR /etc/confd

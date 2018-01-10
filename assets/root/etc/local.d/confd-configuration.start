@@ -1,0 +1,39 @@
+#!/usr/bin/env sh
+set -eu
+
+CONFD_BACKEND=${CONFD_BACKEND:-env}
+CONFD_CLIENT_CAKEYS=${CONFD_CLIENT_CAKEYS:-}
+CONFD_CLIENT_CERT=${CONFD_CLIENT_CERT:-}
+CONFD_CLIENT_KEY=${CONFD_CLIENT_KEY:-}
+CONFD_INTERVAL=${CONFD_INTERVAL:-600}
+CONFD_LOG_LEVEL=${CONFD_LOG_LEVEL:-info}
+CONFD_NODES=${CONFD_NODES:-}
+CONFD_PREFIX=${CONFD_PREFIX:-}
+CONFD_SCHEME=${CONFD_SCHEME:-}
+CONFD_SRV_DOMAIN=${CONFD_SRV_DOMAIN:-}
+CONFD_SRV_RECORD=${CONFD_SRV_RECORD:-}
+CONFD_SYNC_ONLY=${CONFD_SYNC_ONLY:-false}
+CONFD_WATCH=${CONFD_WATCH:-false}
+
+cat /etc/confd/confd.toml.dist | sed -e "s#{{CONFD_BACKEND}}#$CONFD_BACKEND#g" \
+    -e "s#{{CONFD_CLIENT_CAKEYS}}#$CONFD_CLIENT_CAKEYS#g" \
+    -e '/^client_cakeys = "\s*"$/d' \
+    -e "s#{{CONFD_CLIENT_CERT}}#$CONFD_CLIENT_CERT#g" \
+    -e '/^client_cert = "\s*"$/d' \
+    -e "s#{{CONFD_CLIENT_KEY}}#$CONFD_CLIENT_KEY#g" \
+    -e '/^client_key = "\s*"$/d' \
+    -e "s#{{CONFD_INTERVAL}}#$CONFD_INTERVAL#g" \
+    -e "s#{{CONFD_LOG_LEVEL}}#$CONFD_LOG_LEVEL#g" \
+    -e "s#{{CONFD_NODES}}#$CONFD_NODES#g" \
+    -e '/^nodes = \[\s*\]$/d' \
+    -e "s#{{CONFD_PREFIX}}#$CONFD_PREFIX#g" \
+    -e '/^prefix = "\s*"$/d' \
+    -e "s#{{CONFD_SCHEME}}#$CONFD_SCHEME#g" \
+    -e '/^scheme = "\s*"$/d' \
+    -e "s#{{CONFD_SRV_DOMAIN}}#$CONFD_SRV_DOMAIN#g" \
+    -e '/^srv_domain = "\s*"$/d' \
+    -e "s#{{CONFD_SRV_RECORD}}#$CONFD_SRV_RECORD#g" \
+    -e '/^srv_record = "\s*"$/d' \
+    -e "s#{{CONFD_SYNC_ONLY}}#$CONFD_SYNC_ONLY#g" \
+    -e "s#{{CONFD_WATCH}}#$CONFD_WATCH#g" \
+    > /etc/confd/confd.toml
