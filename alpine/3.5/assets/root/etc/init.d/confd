@@ -6,7 +6,7 @@ extra_started_commands="reload reopen"
 
 confdir=/etc/confd
 pidfile=/run/confd/confd.pid
-command=/usr/sbin/confd
+command=/usr/bin/confd
 command_background="yes"
 command_args="-confdir $confdir"
 

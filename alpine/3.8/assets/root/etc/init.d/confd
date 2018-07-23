@@ -1,0 +1,39 @@
+#!/sbin/openrc-run
+
+description="confd is a lightweight configuration management tool"
+extra_commands="checkconfig"
+extra_started_commands="reload reopen"
+
+confdir=/etc/confd
+pidfile=/run/confd/confd.pid
+command=/usr/bin/confd
+command_background="yes"
+command_args="-confdir $confdir"
+
+depend() {
+    need net
+    use dns logger netmount
+}
+
+start_pre() {
+	checkpath --directory --owner root:root ${pidfile%/*}
+	checkpath --directory --owner root:root ${confdir}
+}
+
+checkconfig() {
+	ebegin "Checking $RC_SVCNAME configuration"
+	start_pre
+	eend $?
+}
+
+reload() {
+	ebegin "Reloading $RC_SVCNAME configuration"
+	start_pre && start-stop-daemon --signal HUP --pidfile $pidfile
+	eend $?
+}
+
+reopen() {
+	ebegin "Reopening $RC_SVCNAME log files"
+	start-stop-daemon --signal USR1 --pidfile $pidfile
+	eend $?
+}

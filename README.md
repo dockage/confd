@@ -1,9 +1,18 @@
-# alpine-confd [![Docker Pulls](https://img.shields.io/docker/pulls/dockage/alpine-confd.svg)](https://hub.docker.com/r/dockage/alpine-confd/) [![Docker Stars](https://img.shields.io/docker/stars/dockage/alpine-confd.svg?style=flat)](https://hub.docker.com/r/dockage/alpine-confd/) [![MicroBadger](https://images.microbadger.com/badges/image/dockage/alpine-confd:3.7.svg)](https://microbadger.com/images/dockage/alpine-confd:3.7) [![Docker Build Status](https://img.shields.io/docker/build/dockage/alpine-confd.svg)](https://hub.docker.com/r/dockage/alpine-confd/) [![Docker Automated build](https://img.shields.io/docker/automated/dockage/alpine-confd.svg)](https://hub.docker.com/r/dockage/alpine-confd/)
+# confd [![Docker Pulls](https://img.shields.io/docker/pulls/dockage/confd.svg)](https://hub.docker.com/r/dockage/confd/) [![Docker Stars](https://img.shields.io/docker/stars/dockage/confd.svg?style=flat)](https://hub.docker.com/r/dockage/confd/) [![Docker Build Status](https://img.shields.io/docker/build/dockage/confd.svg)](https://hub.docker.com/r/dockage/confd/) [![Docker Automated build](https://img.shields.io/docker/automated/dockage/confd.svg)](https://hub.docker.com/r/dockage/confd/)
 
 [`confd`](http://confd.io) is a lightweight configuration management tool focused on:
 
 * keeping local configuration files up-to-date using data stored in etcd, consul, dynamodb, redis, vault, zookeeper, aws ssm parameter store or env vars and processing template resources.
 * reloading applications to pick up new config file changes
+
+
+|Versions|Size|Layer|Dockerfile|
+|:-----:|:---:|:---:|:--------:|
+|**alpine3.5**|[![MicroBadger Size (alpine3.5)](https://img.shields.io/microbadger/image-size/dockage/confd/alpine3.5.svg)](https://microbadger.com/images/dockage/confd:alpine3.5)|[![MicroBadger Layers (alpine3.5)](https://img.shields.io/microbadger/layers/dockage/confd/alpine3.5.svg)](https://microbadger.com/images/dockage/confd:alpine3.5)|[alpine/3.5/Dockerfile](https://github.com/dockage/alpine/blob/master/alpine/3.5/Dockerfile)|
+|**alpine3.6**|[![MicroBadger Size (alpine3.6)](https://img.shields.io/microbadger/image-size/dockage/confd/alpine3.6.svg)](https://microbadger.com/images/dockage/confd:alpine3.6)|[![MicroBadger Layers (alpine3.6)](https://img.shields.io/microbadger/layers/dockage/confd/alpine3.6.svg)](https://microbadger.com/images/dockage/confd:alpine3.6)|[alpine/3.6/Dockerfile](https://github.com/dockage/alpine/blob/master/alpine/3.6/Dockerfile)|
+|**alpine3.7**|[![MicroBadger Size (alpine3.7)](https://img.shields.io/microbadger/image-size/dockage/confd/alpine3.7.svg)](https://microbadger.com/images/dockage/confd:alpine3.7)|[![MicroBadger Layers (alpine3.7)](https://img.shields.io/microbadger/layers/dockage/confd/alpine3.7.svg)](https://microbadger.com/images/dockage/confd:alpine3.7)|[alpine/3.7/Dockerfile](https://github.com/dockage/alpine/blob/master/alpine/3.7/Dockerfile)|
+|**alpine3.8**|[![MicroBadger Size (alpine3.8)](https://img.shields.io/microbadger/image-size/dockage/confd/alpine3.8.svg)](https://microbadger.com/images/dockage/confd:alpine3.8)|[![MicroBadger Layers (alpine3.8)](https://img.shields.io/microbadger/layers/dockage/confd/alpine3.8.svg)](https://microbadger.com/images/dockage/confd:alpine3.8)|[alpine/3.8/Dockerfile](https://github.com/dockage/alpine/blob/master/alpine/3.8/Dockerfile)|
+
 
 ## Contributing
 
@@ -28,18 +37,18 @@ If the above recommendations do not help then [report your issue](../../issues/n
 
 ## Installation
 
-Automated builds of the image are available on [Dockerhub](https://hub.docker.com/r/dockage/alpine-confd) and is the recommended method of installation.
+Automated builds of the image are available on [Dockerhub](https://hub.docker.com/r/dockage/confd) and is the recommended method of installation.
 
-> **Note**: Builds are also available on [Quay.io](https://quay.io/repository/dockage/alpine-confd)
+> **Note**: Builds are also available on [Quay.io](https://quay.io/repository/dockage/confd)
 
 ```bash
-docker pull dockage/alpine-confd:3.7
+docker pull dockage/confd:latest
 ```
-
+    
 Alternatively you can build the image yourself.
 
 ```bash
-docker build -t dockage/alpine-confd github.com/dockage/alpine-confd
+docker build -t dockage/confd github.com/dockage/confd
 ```
 
 ### Available Configuration Parameters
