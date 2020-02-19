@@ -1,0 +1,15 @@
+backend = "{{CONFD_BACKEND}}"
+client_cakeys = "{{CONFD_CLIENT_CAKEYS}}"
+client_cert = "{{CONFD_CLIENT_CERT}}"
+client_key = "{{CONFD_CLIENT_KEY}}"
+confdir = "/etc/confd"
+interval = {{CONFD_INTERVAL}}
+log-level = "{{CONFD_LOG_LEVEL}}"
+nodes = [{{CONFD_NODES}}]
+noop = false
+prefix = "{{CONFD_PREFIX}}"
+scheme = "{{CONFD_SCHEME}}"
+srv_domain = "{{CONFD_SRV_DOMAIN}}"
+srv_record = "{{CONFD_SRV_RECORD}}"
+sync-only = {{CONFD_SYNC_ONLY}}
+watch = {{CONFD_WATCH}}

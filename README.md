@@ -5,21 +5,20 @@
 * keeping local configuration files up-to-date using data stored in etcd, consul, dynamodb, redis, vault, zookeeper, aws ssm parameter store or env vars and processing template resources.
 * reloading applications to pick up new config file changes
 
-
 |Versions|Size|Layer|Dockerfile|
 |:-----:|:---:|:---:|:--------:|
 |**alpine3.5**|[![MicroBadger Size (alpine3.5)](https://img.shields.io/microbadger/image-size/dockage/confd/alpine3.5.svg)](https://microbadger.com/images/dockage/confd:alpine3.5)|[![MicroBadger Layers (alpine3.5)](https://img.shields.io/microbadger/layers/dockage/confd/alpine3.5.svg)](https://microbadger.com/images/dockage/confd:alpine3.5)|[alpine/3.5/Dockerfile](https://github.com/dockage/confd/blob/master/alpine/3.5/Dockerfile)|
 |**alpine3.6**|[![MicroBadger Size (alpine3.6)](https://img.shields.io/microbadger/image-size/dockage/confd/alpine3.6.svg)](https://microbadger.com/images/dockage/confd:alpine3.6)|[![MicroBadger Layers (alpine3.6)](https://img.shields.io/microbadger/layers/dockage/confd/alpine3.6.svg)](https://microbadger.com/images/dockage/confd:alpine3.6)|[alpine/3.6/Dockerfile](https://github.com/dockage/confd/blob/master/alpine/3.6/Dockerfile)|
 |**alpine3.7**|[![MicroBadger Size (alpine3.7)](https://img.shields.io/microbadger/image-size/dockage/confd/alpine3.7.svg)](https://microbadger.com/images/dockage/confd:alpine3.7)|[![MicroBadger Layers (alpine3.7)](https://img.shields.io/microbadger/layers/dockage/confd/alpine3.7.svg)](https://microbadger.com/images/dockage/confd:alpine3.7)|[alpine/3.7/Dockerfile](https://github.com/dockage/confd/blob/master/alpine/3.7/Dockerfile)|
-|**alpine3.8**, **latest**|[![MicroBadger Size (alpine3.8)](https://img.shields.io/microbadger/image-size/dockage/confd/alpine3.8.svg)](https://microbadger.com/images/dockage/confd:alpine3.8)|[![MicroBadger Layers (alpine3.8)](https://img.shields.io/microbadger/layers/dockage/confd/alpine3.8.svg)](https://microbadger.com/images/dockage/confd:alpine3.8)|[alpine/3.8/Dockerfile](https://github.com/dockage/confd/blob/master/alpine/3.8/Dockerfile)|
-
+|**alpine3.8**|[![MicroBadger Size (alpine3.8)](https://img.shields.io/microbadger/image-size/dockage/confd/alpine3.8.svg)](https://microbadger.com/images/dockage/confd:alpine3.8)|[![MicroBadger Layers (alpine3.8)](https://img.shields.io/microbadger/layers/dockage/confd/alpine3.8.svg)](https://microbadger.com/images/dockage/confd:alpine3.8)|[alpine/3.8/Dockerfile](https://github.com/dockage/confd/blob/master/alpine/3.8/Dockerfile)|
+|**alpine3.11**, **latest**|[![MicroBadger Size (alpine3.11)](https://img.shields.io/microbadger/image-size/dockage/confd/alpine3.11.svg)](https://microbadger.com/images/dockage/confd:alpine3.11)|[![MicroBadger Layers (alpine3.11)](https://img.shields.io/microbadger/layers/dockage/confd/alpine3.11.svg)](https://microbadger.com/images/dockage/confd:alpine3.11)|[alpine/3.11/Dockerfile](https://github.com/dockage/confd/blob/master/alpine/3.11/Dockerfile)|
 
 ## Contributing
 
 If you find this image useful here's how you can help:
 
-- Send a pull request with your awesome features and bug fixes
-- Help users resolve their [issues](../../issues?q=is%3Aopen+is%3Aissue).
+* Send a pull request with your awesome features and bug fixes
+* Help users resolve their [issues](../../issues?q=is%3Aopen+is%3Aissue)
 
 ## Issues
 
@@ -29,13 +28,13 @@ SELinux users should try disabling SELinux using the command `setenforce 0` to s
 
 If the above recommendations do not help then [report your issue](../../issues/new) along with the following information:
 
-- Output of the `docker vers6` and `docker info` commands
-- The `docker run` command or `docker-compose.yml` used to start the image. Mask out the sensitive bits.
-- Please state if you are using [Boot2Docker](http://www.boot2docker.io), [VirtualBox](https://www.virtualbox.org), etc.
+* Output of the `docker vers6` and `docker info` commands
+* The `docker run` command or `docker-compose.yml` used to start the image. Mask out the sensitive bits.
+* Please state if you are using [Boot2Docker](http://www.boot2docker.io), [VirtualBox](https://www.virtualbox.org), etc.
 
-# Getting started
+## Getting started
 
-## Installation
+### Installation
 
 Automated builds of the image are available on [Dockerhub](https://hub.docker.com/r/dockage/confd) and is the recommended method of installation.
 
@@ -44,7 +43,7 @@ Automated builds of the image are available on [Dockerhub](https://hub.docker.co
 ```bash
 docker pull dockage/confd:latest
 ```
-    
+
 Alternatively you can build the image yourself.
 
 ```bash
@@ -56,7 +55,6 @@ docker build -t dockage/confd github.com/dockage/confd
 *Please refer the docker run command options for the `--env-file` flag where you can specify all required environment variables in a single file. This will save you from writing a potentially long docker run command. Alternatively you can use docker-compose.*
 
 Below is the complete list of available options that can be used to customize your `confd` installation.
-
 
 | Parameter | Description |
 |-----------|-------------|
