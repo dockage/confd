@@ -71,3 +71,10 @@ Below is the complete list of available options that can be used to customize yo
 | `CONFD_SRV_RECORD` | The SRV record to search for backends nodes. Defaults to `''`. |
 | `CONFD_SYNC_ONLY` | sync without check_cmd and reload_cmd. Defaults to `false`. |
 | `CONFD_WATCH` | Enable watch support. Defaults to `false`. |
+
+## Quick reference
+* Where to get help: [website](https://dockage.dev/), [documentation](https://dockage.dev/docs/)
+* GitHub repo: [dockage/confd](https://github.com/dockage/confd)
+* Where to file issues: [GitHub issues](https://github.com/dockage/confd/issues)
+* Maintained by: The Dockage team (info at dockage.dev)
+* License(s) - [license](https://github.com/dockage/confd/blob/main/LICENSE), check 3rd party documentation for license information
